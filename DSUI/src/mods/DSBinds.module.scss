@@ -1,0 +1,25 @@
+.divtable {
+}
+.content {
+    text-align: center;
+}
+table {
+    width:100%;
+}
+tr {
+    display: inline;
+    border: 1rem solid black;
+}
+th, td {
+    width: 10%;
+    height: 25rem;
+    display: inline;
+    text-align: center;
+    padding-right: 5rem;
+}
+th[scope=row], th[scope=col] {
+    text-align: center;
+}
+th[scope=row]:hover, th[scope=col]:hover {
+    background: rgba(61, 188, 206, 0.1);
+}

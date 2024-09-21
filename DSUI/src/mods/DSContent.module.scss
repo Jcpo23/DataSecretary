@@ -1,0 +1,72 @@
+.mainpanel {
+    width: 1500rem;
+    top: 124rem;
+    position: absolute;
+    left: 200rem;
+    display:flex;
+}
+.divhead {
+    display: inline;
+}
+.header {
+    font-variant-caps: small-caps;
+}
+.exitbut {
+    position:relative;
+    left:662rem;
+}
+
+.exitbut FormattedText {
+    color: white;
+}
+.footer {
+    text-align: right;
+    padding-right: 20rem;
+}
+
+.butsect {
+    width: 1500rem;
+    height: 40rem;
+    background-color: rgba(61, 188, 206, 0.1);
+}
+.but {
+    width: 100rem;
+    height: 31rem;
+    position: absolute;
+    top: 10rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.but:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.sel {
+    border-top: 3rem solid;
+    border-top-color: rgba(255, 255, 255, 0.3);
+    border-right: 4rem solid rgba(255, 255, 255, 0.3);
+    border-left: 4rem solid rgba(255, 255, 255, 0.3);
+}
+.sel:hover {
+    background-color: #9ee2fc;
+}
+.but1 {
+    left: 25rem;
+}
+.but2 {
+    left: 150rem;
+}
+.but3 {
+    left: 275rem;
+}
+.buttext {
+    font-size: 80%;
+    color: lightgray;
+}
+.sel .buttext {
+    color:black;
+
+}
+.tabsect {
+    min-height: 400rem;
+}
