@@ -27,7 +27,7 @@ function GetDisData() {
 	const EntList = useValue(DisList).split(",");
 	EntList.length -= 1;
 
-	console.log(mod.id, "GetDisData 1");
+	console.log(mod.id, "GetDisData 1-${EntList[1]");
 	const List = new Array<string>(EntList.length);
 
 	EntList.forEach((element, iter) => {

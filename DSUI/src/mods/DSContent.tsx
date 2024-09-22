@@ -44,42 +44,16 @@ export default () => {
 
 
 	const [modeinit, setModeinit] = useState(false);
-	let Icon = (modeinit) ? DSIconActive : DSIcon;
-	//let nList = (modeinit) ? GetDisData() : [];
-	let nList = ["1", "2", "3"];
+	const Icon = (modeinit) ? DSIconActive : DSIcon;
+	//const nList = (modeinit) ? GetDisData() : [];
+	const nList = ["1", "2", "3"];
 
 	function togglePanel() {
 		setModeinit(!modeinit);
 		ModActive();
 	}
 
-	const [selpop, setSelpop] = useState(true);
-	const [selser, setSelser] = useState(false);
-	const [selind, setSelind] = useState(false);
-
-	function toggleTab(tab: string) {
-		if (tab == "popu") {
-			setSelpop(true);
-			setSelser(false);
-			setSelind(false);
-
-			console.log(selpop, selser, selind);
-		}
-		if (tab == "serv") {
-			setSelpop(false);
-			setSelser(true);
-			setSelind(false);
-
-			console.log(selpop, selser, selind);
-		}
-		if (tab == "indu") {
-			setSelpop(false);
-			setSelser(false);
-			setSelind(true);
-
-			console.log(selpop, selser, selind);
-		}
-	}
+	const [sel, setSel] = useState("popu");
 
 	function DSbut(): JSX.Element {
 		return (
@@ -115,9 +89,9 @@ export default () => {
 		return <FormattedText className={styles.footer} text={"VersionAlpha"} />;
 	}
 	function Tab({ aNameList }: { aNameList: string[] }): JSX.Element {
-		if (selser) {
+		if (sel==="serv") {
 			return <Services NameList={aNameList} />;
-		} if (selind) {
+		} if (sel==="indu") {
 			return <Industry />;
 		} 
 		return <Population />;
@@ -137,36 +111,36 @@ export default () => {
 						<Button
 							variant={"floating"}
 							className={classNames(
-								{ [styles.sel]: selpop },
+								{ [styles.sel]: (sel==="popu") },
 								styles.but1,
 								styles.but,
 							)}
-							onSelect={() => toggleTab("popu")}
-							selected={selpop}
+							onSelect={() => setSel("popu")}
+							selected={(sel === "popu")}
 						>
 							<FormattedText className={styles.buttext} text="POPULATION" />
 						</Button>
 						<Button
 							variant={"floating"}
 							className={classNames(
-								{ [styles.sel]: selser },
+								{ [styles.sel]: (sel === "serv") },
 								styles.but2,
 								styles.but,
 							)}
-							onSelect={() => toggleTab("serv")}
-							selected={selser}
+							onSelect={() => setSel("serv")}
+							selected={(sel === "serv")}
 						>
 							<FormattedText className={styles.buttext} text="SERVICES" />
 						</Button>
 						<Button
 							variant={"floating"}
 							className={classNames(
-								{ [styles.sel]: selind },
+								{ [styles.sel]: (sel === "indu") },
 								styles.but3,
 								styles.but,
 							)}
-							onSelect={() => toggleTab("indu")}
-							selected={selind}
+							onSelect={() => setSel("indu")}
+							selected={(sel === "indu")}
 						>
 							<FormattedText className={styles.buttext} text="INDUSTRY" />
 						</Button>
